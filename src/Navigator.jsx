@@ -1,4 +1,6 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
+import { INITIAL_SCREEN } from '@env';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Maps from './screens/Maps';
@@ -9,12 +11,14 @@ import Profile from './screens/Profile';
 import Register from './screens/Register';
 import ChatRoom from './screens/ChatRoom';
 
+const initialScreenName = INITIAL_SCREEN || 'Welcome';
 const Stack = createNativeStackNavigator();
+console.log('Show Screen:', initialScreenName);
 
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName={initialScreenName} screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
