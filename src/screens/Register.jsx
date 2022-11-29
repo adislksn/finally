@@ -2,30 +2,25 @@ import {
   StyleSheet, Text, View, Button,
 } from 'react-native';
 
-function Home(props) {
+function Register(props) {
   const { navigation } = props;
 
   // Handle press events.
   const press = {
-    logout() {
+    createAccount() {
       navigation.navigate('Login');
     },
 
-    toProfile() {
-      navigation.navigate('Profile');
-    },
-
-    toMaps() {
-      navigation.navigate('Maps');
+    toLoginScreen() {
+      navigation.navigate('Login');
     },
   };
 
   return (
     <View style={styles.container}>
-      <Text>HOME SCREEN</Text>
-      <Button title="Profile" onPress={() => press.toProfile()} />
-      <Button title="Cari Teman" onPress={() => press.toMaps()} />
-      <Button title="Keluar" onPress={() => press.logout()} />
+      <Text>REGISTER SCREEN</Text>
+      <Button title="Register" onPress={() => press.createAccount()} />
+      <Button title="Login" onPress={() => press.toLoginScreen()} />
     </View>
   );
 }
@@ -39,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Register;
