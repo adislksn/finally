@@ -1,12 +1,10 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import Routers from "./src";
+import Routers from './src';
 
-const App = () => {
-  
+function App() {
   return (
     <NavigationContainer>
-      <Routers/>
+      <Routers />
     </NavigationContainer>
   );
 }
