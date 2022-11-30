@@ -1,14 +1,21 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import Routers from "./src";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View } from 'react-native';
+import Navigator from './src/Navigator';
 
-const App = () => {
-  
+function App() {
   return (
-    <NavigationContainer>
-      <Routers/>
-    </NavigationContainer>
+    <View style={style.container}>
+      <StatusBar style="light" />
+      <Navigator />
+    </View>
   );
 }
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    minHeight: '100%',
+  },
+});
 
 export default App;
