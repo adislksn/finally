@@ -1,6 +1,7 @@
 import {
-  StyleSheet, Text, View, Button, Image, StatusBar
+  StyleSheet, Text, View, Button, Image, StatusBar, TouchableOpacity
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 function Welcome(props) {
   const { navigation } = props;
@@ -17,7 +18,7 @@ function Welcome(props) {
         <Image className="w-28 h-28" source={require('../assets/finally.png')}/>
         <Text className="font-bold text-3xl pt-4">Finally</Text>
         <Text className="font-bold text-2xl pt-48 px-10 text-center">Temukan dan ngobrol dengan orang terkedat anda!</Text>
-        <Button title="Mulai" onPress={() => press.toLoginScreen()} />
+        <TouchableOpacity onPress={() => press.toLoginScreen()}><Text>Mulai</Text></TouchableOpacity>
         <StatusBar style="auto" />
     </View>
   );
