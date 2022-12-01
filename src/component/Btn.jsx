@@ -1,4 +1,6 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable quotes */
+
 import { TouchableOpacity, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
