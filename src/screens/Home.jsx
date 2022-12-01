@@ -1,6 +1,7 @@
 import {
   StyleSheet, Text, View, Button,
 } from 'react-native';
+import { Slider } from 'react-input-slider';
 
 function Home(props) {
   const { navigation } = props;
