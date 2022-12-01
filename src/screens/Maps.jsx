@@ -43,10 +43,9 @@ function Maps(props) {
         <View className="w-full justify-center items-center" style={styles.elevation}>
           <MaterialIcons name="keyboard-arrow-up" size={34} color="black" />
           <Text className="text-center font-bold pb-2">Teman Ditemukan</Text>
-
         </View>
         <ScrollView className="">
-          <ChatList />
+          <ChatList screen={press.toChatRoom} />
 
           {/* <Text>MAPS SCREEN</Text> */}
 
@@ -66,10 +65,12 @@ const styles = StyleSheet.create({
 
   shadow: {
     maxHeight: 450,
+    minHeight: 300,
     backgroundColor: '#fff',
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
     elevation: 48,
+
   },
   shadow2: {
     elevation: 48,
