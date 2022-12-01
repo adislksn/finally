@@ -1,1 +1,1 @@
-Berisi assets dokumentasi aplikasi
+Berisi assets dokumentasi aplikasi.
