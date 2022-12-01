@@ -7,7 +7,7 @@ function Btn(props) {
   return (
     <TouchableOpacity
       className="w-full mx-10 mt-8 items-center self-center "
-      onPress={() => props.Pindah()}
+      onPress={() => props.pindah()}
     >
       <LinearGradient
         colors={['#FCAF39', '#FCAF39', '#FB4911']}
