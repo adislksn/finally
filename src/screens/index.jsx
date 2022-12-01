@@ -7,11 +7,11 @@ import Register from './Register';
 import ChatRoom from './ChatRoom';
 
 export {
-    Maps,
-    Home,
-    Login,
-    Welcome,
-    Profile,
-    Register,
-    ChatRoom,
-}
+  Maps,
+  Home,
+  Login,
+  Welcome,
+  Profile,
+  Register,
+  ChatRoom,
+};
