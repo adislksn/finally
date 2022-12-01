@@ -26,7 +26,7 @@ function Home(props) {
   };
 
   return (
-    <View className="flex-1 bg-white py-10 px-7">
+    <View className="flex-1 bg-white py-14 px-7">
       <StatusBar style="dark" />
       <View className="flex-row items-center w-full justify-between">
         <Image className="w-11 h-11" source={require('../assets/finally.png')} />
@@ -34,7 +34,8 @@ function Home(props) {
           <MaterialIcons name="menu" size={35} color="black" />
         </TouchableOpacity>
       </View>
-      <Text className="text-center text-2xl pt-20 ">Tentukan jarak pencarian anda! Anda dapat menjangkau hingga radius 100 KM.</Text>
+
+      <Text className="text-center text-2xl pt-14 ">Tentukan jarak pencarian anda! Anda dapat menjangkau hingga radius 100 KM.</Text>
 
       <View className="items-center justify-center pt-10">
         <View className="rounded-full border-orange-400 border-2 p-3">
