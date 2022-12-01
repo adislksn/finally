@@ -5,7 +5,7 @@ import Navigator from './src/Navigator';
 function App() {
   return (
     <View style={style.container}>
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
       <Navigator />
     </View>
   );

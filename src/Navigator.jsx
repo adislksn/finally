@@ -7,14 +7,14 @@ import {
   Maps, Home, Login, Welcome, Profile, Register, ChatRoom,
 } from './screens';
 
-const initialScreenName = INITIAL_SCREEN;
+const initialScreenName = INITIAL_SCREEN || 'Welcome';
 const Stack = createNativeStackNavigator();
 console.log('Show Screen:', initialScreenName);
 
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName={INITIAL_SCREEN} screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
