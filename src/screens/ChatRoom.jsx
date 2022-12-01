@@ -45,7 +45,6 @@ function ChatRoom(props) {
       <View className="absolute z-50 bottom-0 px-3 py-2 w-full">
         <View className="flex-row justify-between items-center bg-gray-300 p-2.5 rounded-xl">
           <TextInput className="pl-4 placeholder:text-xs placeholder:text-black" placeholder="Tulis Pesan..." />
-          {/* <View className=" h-10 bg-black" /> */}
           <TouchableOpacity className="p-2 bg-orange-400 rounded-full ">
             <MaterialIcons name="send" size={24} color="white" />
           </TouchableOpacity>
