@@ -1,5 +1,5 @@
 import {
-  Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, StyleSheet,
+  Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, StyleSheet, ScrollView,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import Btn from '../component/Btn';
@@ -19,38 +19,42 @@ function Login(props) {
   };
 
   return (
-    <View className="flex-1 bg-white pt-3 px-2 items-center">
+    <View className="flex-1 bg-white">
+      <ScrollView>
+        <View className="flex-1 bg-white pt-3 px-2 items-center">
 
-      <Image className="w-24 h-24 mt-14" source={require('../assets/finally.png')} />
+          <Image className="w-24 h-24 mt-14" source={require('../assets/finally.png')} />
 
-      <Text className="text-4xl mt-16" style={style.textTitle}>Login</Text>
+          <Text className="text-4xl mt-16" style={style.textTitle}>Login</Text>
 
-      <KeyboardAvoidingView className="z-20 w-full justify-center self-center">
-        <View className="items-start px-8 bg-white rounded-xl py-5 shadow-2xl">
+          <KeyboardAvoidingView className="z-20 w-full justify-center self-center">
+            <View className="items-start px-8 bg-white rounded-xl py-5 shadow-2xl">
 
-          <View className="flex-row rounded-md border border-slate-700 p-3 w-full items-center my-4" style={style.inputWrapper}>
-            <FontAwesome5 name="user-astronaut" size={17} style={style.inputIcon} />
-            <TextInput className="w-full pl-4 placeholder:text-xs placeholder:text-black" placeholder="Username" />
+              <View className="flex-row rounded-md border border-slate-700 p-3 w-full items-center my-4" style={style.inputWrapper}>
+                <FontAwesome5 name="user-astronaut" size={17} style={style.inputIcon} />
+                <TextInput className="w-full pl-4 placeholder:text-xs placeholder:text-black" placeholder="Username" />
+              </View>
+
+              <View className="flex-row rounded-md border border-slate-700 p-3 w-full items-center my-4" style={style.inputWrapper}>
+                <FontAwesome5 name="lock" size={17} style={style.inputIcon} />
+                <TextInput secureTextEntry className="w-full pl-4 placeholder:text-xs placeholder:text-black" placeholder="Password" />
+              </View>
+
+              <View className="w-full">
+                <Btn text="Login" pindah={press.login} />
+              </View>
+
+            </View>
+          </KeyboardAvoidingView>
+
+          <View className="flex-row mb-5">
+            <Text>Belum memiliki akun? </Text>
+            <TouchableOpacity onPress={() => press.toRegisterScreen()}>
+              <Text className="text-blue-600">Sign Up</Text>
+            </TouchableOpacity>
           </View>
-
-          <View className="flex-row rounded-md border border-slate-700 p-3 w-full items-center my-4" style={style.inputWrapper}>
-            <FontAwesome5 name="lock" size={17} style={style.inputIcon} />
-            <TextInput secureTextEntry className="w-full pl-4 placeholder:text-xs placeholder:text-black" placeholder="Password" />
-          </View>
-
-          <View className="w-full">
-            <Btn text="Login" pindah={press.login} />
-          </View>
-
         </View>
-      </KeyboardAvoidingView>
-
-      <View className="flex-row mb-5">
-        <Text>Belum memiliki akun? </Text>
-        <TouchableOpacity onPress={() => press.toRegisterScreen()}>
-          <Text className="text-blue-600">Sign Up</Text>
-        </TouchableOpacity>
-      </View>
+      </ScrollView>
     </View>
   );
 }
