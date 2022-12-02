@@ -30,9 +30,9 @@ function Home(props) {
 
       <StatusBar style="dark" />
 
-      <View className="flex-row items-center w-full justify-between py-2 px-6" style={style.header}>
+      <View className="flex-row items-center w-full justify-between py-2 px-6">
         <Image className="w-11 h-11" source={require('../assets/finally.png')} />
-        <TouchableOpacity className="">
+        <TouchableOpacity>
           <MaterialIcons name="menu" size={35} color="black" />
         </TouchableOpacity>
       </View>
@@ -43,13 +43,8 @@ function Home(props) {
         </Text>
 
         <View className="items-center justify-center pt-10">
-          <View className="rounded-full border-orange-400 border-2 p-3">
-            <View className="rounded-full border-orange-400 border-4 p-3 w-max">
-              <View className="rounded-full border-orange-400 border-8 w-36 h-36 p-3 justify-center items-center">
-                <Text className="text-xl">{`${range} KM`}</Text>
-              </View>
-            </View>
-          </View>
+          <Image style={style.radar} source={require('../assets/radar.gif')} />
+          <Text style={style.textRadius} className="text-xl">{`${range} KM`}</Text>
         </View>
 
         <View className="w-full pt-16 pb-4">
@@ -78,13 +73,18 @@ function Home(props) {
 }
 
 const style = StyleSheet.create({
-  header: {
-    // position: 'fixed',
-  },
   textBanner: {
     fontFamily: 'Urbanist-Medium',
     lineHeight: 30,
     color: '#212121',
+  },
+  radar: {
+    width: 220,
+    height: 220,
+  },
+  textRadius: {
+    position: 'absolute',
+    top: 134,
   },
 });
 
