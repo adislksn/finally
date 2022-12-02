@@ -3,6 +3,8 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
+import './src/runtime';
+import { events } from './src/helpers';
 import Navigator from './src/Navigator';
 
 SplashScreen.preventAutoHideAsync();
@@ -18,6 +20,7 @@ function App() {
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) await SplashScreen.hideAsync();
+    events.emit('app-ready');
   }, [fontsLoaded]);
   if (!fontsLoaded) return null;
 
