@@ -12,6 +12,7 @@ function App() {
   const [fontsLoaded] = useFonts({
     'Urbanist-Medium': require('./src/assets/fonts/Urbanist/Urbanist-Medium.ttf'),
     'Urbanist-Bold': require('./src/assets/fonts/Urbanist/Urbanist-Bold.ttf'),
+    'Poppins-Regular': require('./src/assets/fonts/Poppins/Poppins-Regular.ttf'),
     'Poppins-Bold': require('./src/assets/fonts/Poppins/Poppins-Bold.ttf'),
   });
   const onLayoutRootView = useCallback(async () => {
