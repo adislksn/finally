@@ -1,10 +1,11 @@
 import {
-  StyleSheet, View, Text, SafeAreaView, ScrollView, StatusBar, TouchableOpacity,
+  StyleSheet, View, Text, SafeAreaView, ScrollView, StatusBar,
 } from 'react-native';
 import MapView from 'react-native-maps';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import ChatList from '../component/ChatList';
+import Header from '../component/Header';
 
 function Maps(props) {
   const { navigation } = props;
@@ -23,12 +24,7 @@ function Maps(props) {
   return (
     <SafeAreaView className="">
       <StatusBar style="auto" />
-      <View className=" flex-row justify-start items-center bg-white mt-7 ">
-        <TouchableOpacity className="pl-3 absolute z-50" onPress={() => press.toHome()}>
-          <MaterialIcons name="arrow-back" size={24} color="black" />
-        </TouchableOpacity>
-        <Text className="w-full text-center font-bold text-black mr-5 py-3 text-lg">Mencari Teman</Text>
-      </View>
+      <Header title="Mencari Teman" backScreen={press.toHome} />
       <MapView
         className="w-full h-full"
         style={styles.container}

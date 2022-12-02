@@ -1,7 +1,8 @@
 import {
   Text, View, Image, SafeAreaView, StatusBar, TouchableOpacity, ScrollView, TextInput,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons, Feather } from '@expo/vector-icons';
+
 // import React, { useState } from 'react';
 import RightChat from '../component/RightChat';
 import LeftChat from '../component/LeftChat';
@@ -32,7 +33,7 @@ function ChatRoom(props) {
           <View>
             <Text className="font-bold text-lg">Adi Sulaksono</Text>
             <Text className="text-blue-500 italic">online</Text>
-          </View> 
+          </View>
         </View>
       </View>
       <ScrollView className="">
@@ -46,7 +47,7 @@ function ChatRoom(props) {
         <View className="flex-row justify-between items-center bg-gray-300 p-2.5 rounded-xl">
           <TextInput className="pl-4 placeholder:text-xs placeholder:text-black" placeholder="Tulis Pesan..." />
           <TouchableOpacity className="p-2 bg-orange-400 rounded-full ">
-            <MaterialIcons name="send" size={24} color="white" />
+            <Feather name="send" size={24} color="white" />
           </TouchableOpacity>
         </View>
       </View>
