@@ -1,5 +1,5 @@
 import {
-  Text, View, Image, StatusBar, TouchableOpacity,
+  Text, View, Image, StatusBar, TouchableOpacity, StyleSheet, ScrollView,
 } from 'react-native';
 import React, { useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -8,7 +8,7 @@ import Btn from '../component/Btn';
 
 function Home(props) {
   const { navigation } = props;
-  const [range, setRange] = useState(0);
+  const [range, setRange] = useState(1);
 
   // Handle press events.
   const press = {
@@ -26,51 +26,66 @@ function Home(props) {
   };
 
   return (
-    <View className="flex-1 bg-white py-14 px-7">
+    <View className="flex-1 bg-white pt-8">
+
       <StatusBar style="dark" />
-      <View className="flex-row items-center w-full justify-between">
+
+      <View className="flex-row items-center w-full justify-between py-2 px-6" style={style.header}>
         <Image className="w-11 h-11" source={require('../assets/finally.png')} />
         <TouchableOpacity className="">
           <MaterialIcons name="menu" size={35} color="black" />
         </TouchableOpacity>
       </View>
 
-      <Text className="text-center text-2xl pt-14 ">Tentukan jarak pencarian anda! Anda dapat menjangkau hingga radius 100 KM.</Text>
+      <ScrollView className="px-6">
+        <Text className="text-center text-2xl pt-14" style={style.textBanner}>
+          Tentukan jarak pencarian anda! Anda dapat menjangkau hingga radius 100 KM.
+        </Text>
 
-      <View className="items-center justify-center pt-10">
-        <View className="rounded-full border-orange-400 border-2 p-3">
-          <View className="rounded-full border-orange-400 border-4 p-3 w-max">
-            <View className="rounded-full border-orange-400 border-8 w-36 h-36 p-3 justify-center items-center">
-              <Text className="text-xl">
-                {range}
-                {' '}
-                KM
-              </Text>
+        <View className="items-center justify-center pt-10">
+          <View className="rounded-full border-orange-400 border-2 p-3">
+            <View className="rounded-full border-orange-400 border-4 p-3 w-max">
+              <View className="rounded-full border-orange-400 border-8 w-36 h-36 p-3 justify-center items-center">
+                <Text className="text-xl">{`${range} KM`}</Text>
+              </View>
             </View>
           </View>
         </View>
-      </View>
 
-      <View className="w-full py-10">
-        <Slider
-          className="w-11/12 h-10"
-          thumbTintColor="#FB4911"
-          minimumValue={0}
-          step={5}
-          maximumValue={100}
-          minimumTrackTintColor="#FCAF39"
-          maximumTrackTintColor="#D9D9D9"
-          value={30}
-          onValueChange={setRange}
-        />
-      </View>
-      <View>
-        <Btn text="Profile" pindah={press.toProfile} />
-        <Btn text="Cari Teman" pindah={press.toMaps} />
-        <Btn text="Keluar" pindah={press.logout} />
-      </View>
+        <View className="w-full pt-16 pb-4">
+          <Slider
+            className="w-11/12 h-10"
+            thumbTintColor="#FB4911"
+            minimumValue={1}
+            step={1}
+            maximumValue={100}
+            minimumTrackTintColor="#FCAF39"
+            maximumTrackTintColor="#D9D9D9"
+            value={30}
+            onValueChange={setRange}
+          />
+        </View>
+
+        <View>
+          {/* <Btn text="Profile" pindah={press.toProfile} /> */}
+          <Btn text="Cari Teman" pindah={press.toMaps} />
+          {/* <Btn text="Keluar" pindah={press.logout} /> */}
+        </View>
+      </ScrollView>
+
     </View>
   );
 }
+
+const style = StyleSheet.create({
+  header: {
+    // position: 'fixed',
+  },
+  textBanner: {
+    fontFamily: 'Urbanist-Medium',
+    lineHeight: 30,
+    color: '#212121',
+  },
+});
 
 export default Home;
