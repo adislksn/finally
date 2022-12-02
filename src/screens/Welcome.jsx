@@ -29,6 +29,7 @@ function Welcome(props) {
 const style = StyleSheet.create({
   textLogo: {
     fontFamily: 'Urbanist-Bold',
+    letterSpacing: 4,
   },
   textBanner: {
     fontFamily: 'Urbanist-Medium',
