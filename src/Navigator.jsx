@@ -14,7 +14,7 @@ console.log('Show Screen:', initialScreenName);
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={INITIAL_SCREEN} screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName={initialScreenName} screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
