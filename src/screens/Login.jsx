@@ -30,14 +30,14 @@ function Login(props) {
           <KeyboardAvoidingView className="z-20 w-full justify-center self-center">
             <View className="items-start px-8 bg-white rounded-xl py-5 shadow-2xl">
 
-              <View className="flex-row rounded-md border border-slate-700 p-3 w-full items-center my-4" style={style.inputWrapper}>
+              <View className="flex-row rounded-md p-3 w-full items-center my-4" style={style.inputWrapper}>
                 <FontAwesome5 name="user-astronaut" size={17} style={style.inputIcon} />
-                <TextInput className="w-full pl-4 placeholder:text-xs placeholder:text-black" placeholder="Username" />
+                <TextInput className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder="Username" />
               </View>
 
-              <View className="flex-row rounded-md border border-slate-700 p-3 w-full items-center my-4" style={style.inputWrapper}>
+              <View className="flex-row rounded-md p-3 w-full items-center my-4" style={style.inputWrapper}>
                 <FontAwesome5 name="lock" size={17} style={style.inputIcon} />
-                <TextInput secureTextEntry className="w-full pl-4 placeholder:text-xs placeholder:text-black" placeholder="Password" />
+                <TextInput secureTextEntry className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder="Password" />
               </View>
 
               <View className="w-full">
@@ -64,7 +64,7 @@ const style = StyleSheet.create({
     fontFamily: 'Urbanist-Bold',
   },
   inputWrapper: {
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F1F1F1',
   },
   inputIcon: {
     color: '#C5C5C7',

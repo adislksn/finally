@@ -17,7 +17,6 @@ const genders = [
 
 function Profile(props) {
   const { navigation } = props;
-
   const [gender, setGender] = useState('anonym');
 
   // Handle press events.
