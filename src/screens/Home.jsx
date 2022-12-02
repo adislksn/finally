@@ -4,7 +4,7 @@ import {
 import React, { useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
-import Btn from '../component/Btn';
+import Btn from './_components/Btn';
 import Navbar from './_components/Navbar';
 
 function Home(props) {

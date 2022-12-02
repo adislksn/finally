@@ -6,7 +6,7 @@ import {
   FontAwesome, Fontisto, MaterialCommunityIcons,
 } from '@expo/vector-icons';
 import { SelectList } from 'react-native-dropdown-select-list';
-import Btn from '../component/Btn';
+import Btn from './_components/Btn';
 import Header from './_components/Header';
 
 const genders = [

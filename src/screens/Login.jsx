@@ -2,7 +2,7 @@ import {
   Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, StyleSheet, ScrollView,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import Btn from '../component/Btn';
+import Btn from './_components/Btn';
 
 function Login(props) {
   const { navigation } = props;

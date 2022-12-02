@@ -2,7 +2,7 @@ import {
   View, KeyboardAvoidingView, TextInput, Image, Text, TouchableOpacity, StyleSheet, ScrollView,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import Btn from '../component/Btn';
+import Btn from './_components/Btn';
 
 function Register(props) {
   const { navigation } = props;
