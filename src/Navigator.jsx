@@ -10,6 +10,7 @@ import {
 function Routes() {
   const initialScreenName = INITIAL_SCREEN || 'Welcome';
   const Stack = createNativeStackNavigator();
+  // eslint-disable-next-line no-console
   if (INITIAL_SCREEN) console.log('> Show Screen:', INITIAL_SCREEN);
   return (
     <NavigationContainer>

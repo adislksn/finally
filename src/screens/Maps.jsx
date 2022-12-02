@@ -4,8 +4,8 @@ import {
 import MapView from 'react-native-maps';
 import { MaterialIcons } from '@expo/vector-icons';
 
+import Header from './_components/Header';
 import ChatList from '../component/ChatList';
-import Header from '../component/Header';
 
 function Maps(props) {
   const { navigation } = props;
@@ -24,7 +24,7 @@ function Maps(props) {
   return (
     <SafeAreaView className="">
       <StatusBar style="auto" />
-      <Header title="Mencari Teman" backScreen={press.toHome} />
+      <Header title="Mencari Teman" backTo="Home" navigation={navigation} />
       <MapView
         className="w-full h-full"
         style={styles.container}
