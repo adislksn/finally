@@ -9,7 +9,7 @@ import {
 
 const initialScreenName = INITIAL_SCREEN || 'Welcome';
 const Stack = createNativeStackNavigator();
-console.log('Show Screen:', initialScreenName);
+console.log('> Show Screen:', initialScreenName);
 
 function Routes() {
   return (
