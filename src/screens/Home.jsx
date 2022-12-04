@@ -4,20 +4,18 @@ import {
 import React, { useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
-import Btn from '../component/Btn';
+import Btn from './_components/Btn';
+import Navbar from './_components/Navbar';
 
 function Home(props) {
   const { navigation } = props;
   const [range, setRange] = useState(1);
+  const [showNav, setShowNav] = useState(false);
 
   // Handle press events.
   const press = {
-    logout() {
-      navigation.navigate('Login');
-    },
-
-    toProfile() {
-      navigation.navigate('Profile');
+    navToggle() {
+      setShowNav(!showNav);
     },
 
     toMaps() {
@@ -26,14 +24,16 @@ function Home(props) {
   };
 
   return (
-    <View className="flex-1 bg-white pt-8">
+    <View className="flex-1 bg-white pt-8" style={{ position: 'relative' }}>
 
       <StatusBar style="dark" />
 
+      <Navbar navigation={navigation} showNav={showNav} />
+
       <View className="flex-row items-center w-full justify-between py-2 px-6">
         <Image className="w-11 h-11" source={require('../assets/finally.png')} />
-        <TouchableOpacity>
-          <MaterialIcons name="menu" size={35} color="black" />
+        <TouchableOpacity activeOpacity={0.4} onPress={press.navToggle}>
+          <MaterialIcons name={(!showNav) ? 'menu' : 'close'} size={35} color="black" />
         </TouchableOpacity>
       </View>
 
@@ -62,10 +62,9 @@ function Home(props) {
         </View>
 
         <View>
-          {/* <Btn text="Profile" pindah={press.toProfile} /> */}
           <Btn text="Cari Teman" pindah={press.toMaps} />
-          {/* <Btn text="Keluar" pindah={press.logout} /> */}
         </View>
+
       </ScrollView>
 
     </View>

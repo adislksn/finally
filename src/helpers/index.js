@@ -1,4 +1,4 @@
-import eventsHelper from './events.helper';
+import events from './events.helper';
 
-export { eventsHelper };
+export { events };
 export default 'Helpers';

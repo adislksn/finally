@@ -3,6 +3,8 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
+import './src/runtime';
+import { events } from './src/helpers';
 import Navigator from './src/Navigator';
 
 SplashScreen.preventAutoHideAsync();
@@ -12,10 +14,13 @@ function App() {
   const [fontsLoaded] = useFonts({
     'Urbanist-Medium': require('./src/assets/fonts/Urbanist/Urbanist-Medium.ttf'),
     'Urbanist-Bold': require('./src/assets/fonts/Urbanist/Urbanist-Bold.ttf'),
+    'Poppins-Regular': require('./src/assets/fonts/Poppins/Poppins-Regular.ttf'),
+    'Poppins-Medium': require('./src/assets/fonts/Poppins/Poppins-Medium.ttf'),
     'Poppins-Bold': require('./src/assets/fonts/Poppins/Poppins-Bold.ttf'),
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) await SplashScreen.hideAsync();
+    events.emit('app-ready');
   }, [fontsLoaded]);
   if (!fontsLoaded) return null;
 
@@ -31,7 +36,6 @@ function App() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: '100%',
   },
 });
 

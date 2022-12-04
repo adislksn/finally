@@ -1,7 +1,7 @@
 import {
   StyleSheet, Text, View, Image, StatusBar,
 } from 'react-native';
-import Btn from '../component/Btn';
+import Btn from './_components/Btn';
 
 function Welcome(props) {
   const { navigation } = props;
