@@ -91,7 +91,6 @@ function Profile(props) {
                // override default styles
               defaultOption={{ key: '1', value: 'tidak ingin menyebutkan' }} // default selected option
             />
-            {/* <TextInput className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder={fullName} /> */}
           </View>
           <View className="flex-row mt-7 justify-start items-center bg-gray-200 p-2.5 rounded-xl">
             <View className="p-2 rounded-full ">
