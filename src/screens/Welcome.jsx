@@ -18,7 +18,7 @@ function Welcome(props) {
       <StatusBar style="light" />
       <Image className="w-44 h-44 mt-32" source={require('../assets/finally.png')} />
       <Text className="text-4xl pt-5" style={style.textLogo}>Finally</Text>
-      <Text className="text-2xl pt-40 text-center" style={style.textBanner}>Temukan dan ngobrol dengan orang terkedat anda!</Text>
+      <Text className="text-2xl pt-40 text-center" style={style.textBanner}>Temukan dan ngobrol dengan orang terdekat anda!</Text>
       <View className="w-full">
         <Btn text="Mulai" pindah={press.toLoginScreen} />
       </View>
