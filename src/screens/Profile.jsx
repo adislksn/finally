@@ -55,12 +55,12 @@ function Profile(props) {
 
           <View className="px-7 pt-4">
 
-            <View className="flex-row rounded-md p-3 w-full items-center mb-5" style={style.inputWrapper}>
+            <View className="flex-row rounded-md p-3 w-full items-center mb-5 bg-gray-100">
               <FontAwesome name="user" size={24} style={style.inputIcon} />
               <TextInput className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder="Nama" />
             </View>
 
-            <View className="flex-row relative z-10 rounded-md p-3 w-full items-center mb-5" style={style.inputWrapper}>
+            <View className="flex-row relative z-10 rounded-md p-3 w-full items-center mb-5 bg-gray-100">
               <Fontisto name="transgender" size={24} style={style.inputIcon} />
               <SelectList
                 data={genders}
@@ -75,7 +75,7 @@ function Profile(props) {
               />
             </View>
 
-            <View className="flex-row rounded-md p-3 w-full items-center" style={style.inputWrapper}>
+            <View className="flex-row rounded-md p-3 w-full items-center bg-gray-100">
               <MaterialCommunityIcons name="playlist-edit" size={24} style={style.inputIcon} />
               <TextInput className="w-10/12 pl-1 placeholder:text-s placeholder:text-black" placeholder="Bio" />
             </View>
@@ -91,9 +91,6 @@ function Profile(props) {
 }
 
 const style = StyleSheet.create({
-  inputWrapper: {
-    backgroundColor: '#F1F1F1',
-  },
   inputIcon: {
     color: '#C5C5C7',
     paddingHorizontal: 4,
