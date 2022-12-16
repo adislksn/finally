@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
+import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import './src/runtime';
+import store from './src/redux/store';
 import { events } from './src/helpers';
 import Navigator from './src/Navigator';
 
@@ -26,10 +28,12 @@ function App() {
 
   // Render screen.
   return (
-    <View style={style.container} onLayout={onLayoutRootView}>
-      <StatusBar style="auto" />
-      <Navigator />
-    </View>
+    <Provider store={store}>
+      <View style={style.container} onLayout={onLayoutRootView}>
+        <StatusBar style="auto" />
+        <Navigator />
+      </View>
+    </Provider>
   );
 }
 
