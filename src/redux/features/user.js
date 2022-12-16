@@ -8,7 +8,8 @@ export const user = createSlice({
   name: 'user',
   initialState: { initialState },
   reducers: {
-    //
+    // State Control.
+    // API Control.
   },
 });
 
