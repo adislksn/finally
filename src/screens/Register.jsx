@@ -1,20 +1,46 @@
+import delay from 'delay';
+import axios from 'axios';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   View, KeyboardAvoidingView, TextInput, Image, Text, TouchableOpacity, StyleSheet, Platform,
 } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { useSelector, useDispatch } from 'react-redux';
 import Btn from './_components/Btn';
-import { setForm } from '../redux/features/formRegister';
+import {
+  setForm, setBtn, setMessage, resetState,
+} from '../redux/features/formRegister';
+
+function MessageView(props) {
+  const { message } = props;
+  const { error, success } = message;
+  if (error) return <Text className="text-rose-700">{ error }</Text>;
+  if (success) return <Text className="text-emerald-600">{ success }</Text>;
+  return null;
+}
 
 function Register(props) {
   const { navigation } = props;
-  const formRegister = useSelector((state) => state.formRegister);
   const dispatch = useDispatch();
+  const formRegister = useSelector((state) => state.formRegister);
 
   // Handle press events.
   const press = {
-    createAccount() {
-      navigation.navigate('Login');
+    async createAccount() {
+      const url = '/api/users/register';
+      const body = formRegister.form;
+      dispatch(setBtn({ disabled: true, value: 'Loading...' }));
+      dispatch(setMessage({}));
+      await axios.post(url, body).then(({ data }) => {
+        dispatch(setMessage({ success: data.msg }));
+        (async () => {
+          await delay(600);
+          navigation.navigate('Login');
+          dispatch(resetState());
+        })();
+      }).catch(({ response }) => {
+        dispatch(setMessage({ error: response.data.msg }));
+      });
+      dispatch(setBtn({ disabled: false, value: 'Sign Up' }));
     },
 
     toLoginScreen() {
@@ -75,8 +101,12 @@ function Register(props) {
               />
             </View>
 
+            <View>
+              <MessageView message={formRegister.message} />
+            </View>
+
             <View className="w-full">
-              <Btn text={formRegister.btn.value} pindah={press.createAccount} />
+              <Btn text={formRegister.btn.value} click={press.createAccount} />
             </View>
 
           </View>

@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {};
+
 export const example = createSlice({
   name: 'example',
-  initialState: {
-    //
-  },
+  initialState: { ...initialState },
   reducers: {
     //
   },
