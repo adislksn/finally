@@ -80,7 +80,7 @@ function Profile(props) {
               <TextInput className="w-10/12 pl-1 placeholder:text-s placeholder:text-black" placeholder="Bio" />
             </View>
 
-            <Btn text="Simpan" pindah={press.save} />
+            <Btn text="Simpan" click={press.save} />
 
           </View>
 

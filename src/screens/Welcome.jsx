@@ -20,7 +20,7 @@ function Welcome(props) {
       <Text className="text-4xl pt-5" style={style.textLogo}>Finally</Text>
       <Text className="text-2xl pt-40 text-center" style={style.textBanner}>Temukan dan ngobrol dengan orang terdekat anda!</Text>
       <View className="w-full">
-        <Btn text="Mulai" pindah={press.toLoginScreen} />
+        <Btn text="Mulai" click={press.toLoginScreen} />
       </View>
     </View>
   );
