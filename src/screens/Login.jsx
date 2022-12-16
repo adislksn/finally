@@ -1,16 +1,48 @@
+import delay from 'delay';
+import axios from 'axios';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, StyleSheet, Platform,
 } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
 import Btn from './_components/Btn';
+import {
+  setForm, setBtn, setMessage, resetState,
+} from '../redux/features/formLogin';
+
+function MessageView(props) {
+  const { message } = props;
+  const { error, success } = message;
+  if (error) return <Text className="text-rose-700">{ error }</Text>;
+  if (success) return <Text className="text-emerald-600">{ success }</Text>;
+  return null;
+}
 
 function Login(props) {
   const { navigation } = props;
+  const dispatch = useDispatch();
+  const formLogin = useSelector((state) => state.formLogin);
 
   // Handle press events.
   const press = {
-    login() {
-      navigation.navigate('Home');
+    async login() {
+      const url = '/api/auth/login';
+      const body = formLogin.form;
+      dispatch(setBtn({ disabled: true, value: 'Autentikasi...' }));
+      dispatch(setMessage({}));
+      await axios.post(url, body).then(async ({ data }) => {
+        dispatch(setMessage({ success: data.msg }));
+        (async () => {
+          await delay(250);
+          navigation.navigate('Home');
+          await delay(5000);
+          dispatch(resetState());
+        })();
+        await delay(5000);
+      }).catch(({ response }) => {
+        dispatch(setMessage({ error: response.data.msg }));
+      });
+      dispatch(setBtn({ disabled: false, value: 'Login' }));
     },
 
     toRegisterScreen() {
@@ -31,16 +63,31 @@ function Login(props) {
 
             <View className="flex-row rounded-md p-3 w-full items-center my-4 bg-gray-100">
               <FontAwesome5 name="user-astronaut" size={17} style={style.inputIcon} />
-              <TextInput className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder="Username" />
+              <TextInput
+                value={formLogin.form.username}
+                onChangeText={(value) => dispatch(setForm({ key: 'username', value }))}
+                className="w-10/12 pl-4 placeholder:text-s placeholder:text-black"
+                placeholder="Username"
+              />
             </View>
 
             <View className="flex-row rounded-md p-3 w-full items-center my-4 bg-gray-100">
               <FontAwesome5 name="lock" size={17} style={style.inputIcon} />
-              <TextInput secureTextEntry className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder="Password" />
+              <TextInput
+                value={formLogin.form.password}
+                onChangeText={(value) => dispatch(setForm({ key: 'password', value }))}
+                secureTextEntry
+                className="w-10/12 pl-4 placeholder:text-s placeholder:text-black"
+                placeholder="Password"
+              />
+            </View>
+
+            <View>
+              <MessageView message={formLogin.message} />
             </View>
 
             <View className="w-full">
-              <Btn text="Login" pindah={press.login} />
+              <Btn text={formLogin.btn.value} click={press.login} />
             </View>
 
           </View>
