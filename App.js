@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
+import './src/socket';
 import './src/runtime';
 import store from './src/redux/store';
 import { events } from './src/helpers';
