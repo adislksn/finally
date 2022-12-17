@@ -2,6 +2,7 @@ import delay from 'delay';
 import axios from 'axios';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useSelector, useDispatch } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, StyleSheet, Platform,
 } from 'react-native';
@@ -31,6 +32,7 @@ function Login(props) {
       dispatch(setBtn({ disabled: true, value: 'Autentikasi...' }));
       dispatch(setMessage({}));
       await axios.post(url, body).then(async ({ data }) => {
+        await AsyncStorage.setItem('token', data.token);
         dispatch(setMessage({ success: data.msg }));
         (async () => {
           await delay(250);
@@ -39,7 +41,8 @@ function Login(props) {
           dispatch(resetState());
         })();
         await delay(5000);
-      }).catch(({ response }) => {
+      }).catch(async ({ response }) => {
+        await AsyncStorage.removeItem('token');
         dispatch(setMessage({ error: response.data.msg }));
       });
       dispatch(setBtn({ disabled: false, value: 'Login' }));

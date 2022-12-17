@@ -21,6 +21,7 @@ module.exports = {
     'linebreak-style': 'off',
     'react/prop-types': 'off',
     'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
     'class-methods-use-this': 'off',
     'react/style-prop-object': 'off',
     'react/react-in-jsx-scope': 'off',

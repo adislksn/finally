@@ -1,11 +1,28 @@
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { FontAwesome5, AntDesign } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Text, StyleSheet, View, TouchableOpacity,
 } from 'react-native';
+import { resetState } from '../../redux/features/user';
 
 export default function Btn(props) {
   const { navigation, showNav } = props;
   if (!showNav) return null;
+  const dispatch = useDispatch();
+
+  // Handle press events.
+  const press = {
+    logout() {
+      const url = '/api/auth/logout';
+      axios.delete(url).then(async () => {
+        await AsyncStorage.removeItem('token');
+        dispatch(resetState());
+        navigation.navigate('Login');
+      });
+    },
+  };
 
   return (
     <View style={style.wrapper}>
@@ -31,7 +48,7 @@ export default function Btn(props) {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity activeOpacity={0.3} onPress={() => navigation.navigate('Login')}>
+      <TouchableOpacity activeOpacity={0.3} onPress={press.logout}>
         <View className="flex-row items-center py-2 px-6">
           <FontAwesome5 name="power-off" size={18} color="#9796A1" />
           <Text className="pl-4" style={style.textNav}>Keluar</Text>
