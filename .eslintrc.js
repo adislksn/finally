@@ -20,6 +20,7 @@ module.exports = {
     'global-require': 'off',
     'linebreak-style': 'off',
     'react/prop-types': 'off',
+    'no-param-reassign': 'off',
     'class-methods-use-this': 'off',
     'react/style-prop-object': 'off',
     'react/react-in-jsx-scope': 'off',

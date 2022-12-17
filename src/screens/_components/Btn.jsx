@@ -4,11 +4,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 function Btn(props) {
   const title = props.text;
+  const { disabled } = props;
   return (
     <TouchableOpacity
       className="w-full mx-10 mt-8 items-center self-center"
+      disabled={disabled}
       activeOpacity={0.7}
-      onPress={() => props.pindah()}
+      onPress={() => props.click()}
     >
       <LinearGradient
         colors={['#FCAF39', '#FCAF39', '#FB4911']}

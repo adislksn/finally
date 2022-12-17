@@ -62,7 +62,7 @@ function Home(props) {
         </View>
 
         <View>
-          <Btn text="Cari Teman" pindah={press.toMaps} />
+          <Btn text="Cari Teman" click={press.toMaps} />
         </View>
 
       </ScrollView>
