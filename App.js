@@ -1,3 +1,6 @@
+/* eslint-disable import/no-unresolved */
+import axios from 'axios';
+import { BASE_URL } from '@env';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import { Provider } from 'react-redux';
@@ -11,6 +14,9 @@ import { events } from './src/helpers';
 import Navigator from './src/Navigator';
 
 SplashScreen.preventAutoHideAsync();
+
+// Set axios configs.
+axios.defaults.baseURL = BASE_URL || 'http://localhost:8000';
 
 function App() {
   // Load fonts.
