@@ -1,16 +1,22 @@
+import delay from 'delay';
+import axios from 'axios';
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Text, View, Image, StatusBar, TouchableOpacity, StyleSheet, ScrollView,
 } from 'react-native';
-import React, { useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import Btn from './_components/Btn';
 import Navbar from './_components/Navbar';
+import { setRadius, setBtn, setFriends } from '../redux/features/formSearch';
 
 function Home(props) {
   const { navigation } = props;
   const [range, setRange] = useState(1);
   const [showNav, setShowNav] = useState(false);
+  const dispatch = useDispatch();
+  const formSearch = useSelector((state) => state.formSearch);
 
   // Handle press events.
   const press = {
@@ -18,8 +24,15 @@ function Home(props) {
       setShowNav(!showNav);
     },
 
-    toMaps() {
+    async searchFriends() {
+      const url = `/api/friends?radius=${formSearch.form.radius}`;
+      dispatch(setBtn({ disabled: true, value: 'Mencari...' }));
+      await axios.get(url).then(({ data }) => {
+        dispatch(setFriends(data.friends));
+      });
       navigation.navigate('Maps');
+      await delay(250);
+      dispatch(setBtn({ disabled: false, value: 'Cari Teman' }));
     },
   };
 
@@ -44,7 +57,9 @@ function Home(props) {
 
         <View className="items-center justify-center pt-10">
           <Image style={style.radar} source={require('../assets/radar.gif')} />
-          <Text style={style.textRadius} className="text-xl">{`${range} KM`}</Text>
+          <Text style={style.textRadius} className="text-xl">
+            {`${range} KM`}
+          </Text>
         </View>
 
         <View className="w-full pt-16 pb-4">
@@ -56,13 +71,18 @@ function Home(props) {
             maximumValue={100}
             minimumTrackTintColor="#FCAF39"
             maximumTrackTintColor="#D9D9D9"
-            value={30}
+            value={formSearch.form.radius}
             onValueChange={setRange}
+            onSlidingComplete={((value) => dispatch(setRadius(value)))}
           />
         </View>
 
         <View>
-          <Btn text="Cari Teman" click={press.toMaps} />
+          <Btn
+            disabled={formSearch.btn.disabled}
+            text={formSearch.btn.value}
+            click={press.searchFriends}
+          />
         </View>
 
       </ScrollView>
