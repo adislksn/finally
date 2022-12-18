@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   Maps, Home, Login, Welcome, Profile, Register, ChatRoom,
 } from './screens';
+import Demo from './screens/Demo';
 
 // Set axios configs.
 axios.defaults.baseURL = BASE_URL || 'http://localhost:8000';
@@ -26,6 +27,7 @@ function Routes() {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Maps" component={Maps} />
         <Stack.Screen name="ChatRoom" component={ChatRoom} />
+        <Stack.Screen name="Demo" component={Demo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

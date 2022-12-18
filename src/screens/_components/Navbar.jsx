@@ -22,6 +22,9 @@ export default function Btn(props) {
         navigation.navigate('Login');
       });
     },
+    goDemo() {
+      navigation.navigate('Demo');
+    },
   };
 
   return (
@@ -52,6 +55,13 @@ export default function Btn(props) {
         <View className="flex-row items-center py-2 px-6">
           <FontAwesome5 name="power-off" size={18} color="#9796A1" />
           <Text className="pl-4" style={style.textNav}>Keluar</Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity activeOpacity={0.3} onPress={press.goDemo}>
+        <View className="flex-row items-center py-2 px-6">
+          <FontAwesome5 name="power-off" size={18} color="#9796A1" />
+          <Text className="pl-4" style={style.textNav}>Demo</Text>
         </View>
       </TouchableOpacity>
 
