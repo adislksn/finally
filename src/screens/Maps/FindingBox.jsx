@@ -1,11 +1,46 @@
+import { useSelector } from 'react-redux';
 import {
   StyleSheet, View, Text, ScrollView, TouchableOpacity,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import FindedUser from './FindedUser';
 
-export default function FindingBox(props) {
-  const { navigation } = props;
+function FindedUserItems(props) {
+  const { myFriends } = props;
+  const formSearch = useSelector((state) => state.formSearch);
+
+  if (!myFriends.length) {
+    return (
+      <View className="w-full">
+        <Text className="text-center italic">
+          Tidak ada teman online pada radius
+          {' '}
+          { formSearch.form.radius }
+          {' '}
+          KM.
+        </Text>
+      </View>
+    );
+  }
+
+  return (
+    <View>
+      {myFriends.map((friend) => (
+        <TouchableOpacity key={friend._id} activeOpacity={0.7} className="w-full" onPress={() => { }}>
+          <FindedUser
+            name={friend.name}
+            status={friend.description}
+            distance={friend.distance}
+          />
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+}
+
+export default function FindingBox() {
+  const formSearch = useSelector((state) => state.formSearch);
+
   return (
     <View className="w-full absolute bottom-0" style={styles.wrapper}>
 
@@ -15,30 +50,7 @@ export default function FindingBox(props) {
       </TouchableOpacity>
 
       <ScrollView className="px-5 pt-2 w-full">
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { navigation.navigate('ChatRoom'); }}>
-          <FindedUser name="Masqomar.21" status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { }}>
-          <FindedUser name="Fanesa Hadi Pra..." status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { }}>
-          <FindedUser name="Adi Sulaksono " status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { }}>
-          <FindedUser name="Masqomar.21" status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { }}>
-          <FindedUser name="Devi Kurnia" status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { }}>
-          <FindedUser name="Adli Mustofa" status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full" onPress={() => { }}>
-          <FindedUser name="Masqomar.21" status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-full mb-10" onPress={() => { }}>
-          <FindedUser name="Masqomar.21" status="lagi galau nich" distance="3.20" />
-        </TouchableOpacity>
+        <FindedUserItems myFriends={formSearch.friends} />
       </ScrollView>
 
     </View>

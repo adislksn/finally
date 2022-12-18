@@ -3094,6 +3094,11 @@ decamelize@^1.2.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==
 
+decimal-adjust@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/decimal-adjust/-/decimal-adjust-0.0.0.tgz#f9d90cb0774855f3603969d4d72e97b0219677f8"
+  integrity sha512-6J5fCnmKwwmtbFnGEM4rI0zejGmjC3h8dDjguK8SlQ7rl2eAXcfqFUcVGHd5mraGodwbtwdNkQIq7XTKbZNWYQ==
+
 decode-uri-component@^0.2.0, decode-uri-component@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
@@ -3989,6 +3994,13 @@ flatted@^3.1.0:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
+
+floor@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/floor/-/floor-0.0.0.tgz#6bd37937abf1675352d661b66f8f33244fb9d623"
+  integrity sha512-U102GBbK5zn5PYMUa6DnkJmy77W6jpt5kCo5a46NFUmjz4BSG37tQ0O3lSy2uIoeULai/Dfi1TxFVTdnjtN3kw==
+  dependencies:
+    decimal-adjust "0.0.0"
 
 flow-parser@0.*:
   version "0.196.0"
