@@ -12,13 +12,18 @@ const stringLimiter = (string, limit = 4) => {
 };
 
 export default function FindedUser(props) {
-  const { name, status, distance } = props;
+  const {
+    picture, name, status, distance,
+  } = props;
+  const noImage = require('../../assets/default-pic.jpg');
+  const imageProfile = picture !== null ? { uri: picture } : noImage;
+
   return (
     <View className="flex-row w-full relative items-center my-1 py-1">
 
       <View className="flex-row items-center">
 
-        <Image className="w-12 h-12 rounded-full" source={require('../../assets/image1.png')} />
+        <Image className="w-12 h-12 rounded-full" source={imageProfile} />
 
         <View className="ml-3 -mt-1">
           <View className="flex-row gap-1 pb-0 items-baseline">

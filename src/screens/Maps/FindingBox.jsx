@@ -28,6 +28,7 @@ function FindedUserItems(props) {
       {myFriends.map((friend) => (
         <TouchableOpacity key={friend._id} activeOpacity={0.7} className="w-full" onPress={() => { }}>
           <FindedUser
+            picture={friend.picture}
             name={friend.name}
             status={friend.description}
             distance={friend.distance}
