@@ -3,14 +3,14 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 
-// import ReciveModal from './_components/_modal/ReciveModal';
-// import SendModal from './_components/_modal/SendModal';
-// import LoadModal from './_components/_modal/LoadModal';
-import DeniedModal from './_components/_modal/DeniedModal';
+// import ReciveModal from './_components/_modals/ReciveModal';
+// import SendModal from './_components/_modals/SendModal';
+// import LoadModal from './_components/_modals/LoadModal';
+// import DeniedModal from './_components/_modals/DeniedModal';
+import ModalChatRequest from './_components/_modals/ChatRequest';
 
 export default function Demo(props) {
   const { navigation } = props;
-
   const [showModal, setShowModal] = useState(false);
 
   const press = {
@@ -26,15 +26,19 @@ export default function Demo(props) {
   return (
     <View className="flex-1 justify-center items-center">
       <StatusBar />
-      <Modal
+
+      <ModalChatRequest showed={showModal} setter={setShowModal} />
+
+      {/* <Modal
         animationType="slide"
         transparent
         visible={showModal}
       >
-        {/* <ReciveModal click={press} /> */}
-        <DeniedModal click={press} />
+        <ReciveModal click={press} />
+        <SendModal click={press} />
 
-      </Modal>
+      </Modal> */}
+
       <TouchableOpacity className="bg-slate-500" onPress={() => { press.toggleModal(); }}>
         <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold' }}>
           Hello world

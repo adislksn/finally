@@ -4,10 +4,17 @@ import {
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import FindedUser from './FindedUser';
+import { events } from '../../helpers';
 
 function FindedUserItems(props) {
   const { myFriends } = props;
   const formSearch = useSelector((state) => state.formSearch);
+
+  const press = {
+    openModalChatRequest(friend) {
+      events.emit('modal:chat-request', friend);
+    },
+  };
 
   if (!myFriends.length) {
     return (
@@ -26,7 +33,12 @@ function FindedUserItems(props) {
   return (
     <View>
       {myFriends.map((friend) => (
-        <TouchableOpacity key={friend._id} activeOpacity={0.7} className="w-full" onPress={() => { }}>
+        <TouchableOpacity
+          className="w-full"
+          key={friend._id}
+          activeOpacity={0.7}
+          onPress={() => press.openModalChatRequest(friend)}
+        >
           <FindedUser
             picture={friend.picture}
             name={friend.name}

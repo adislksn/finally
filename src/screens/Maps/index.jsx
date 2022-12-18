@@ -1,18 +1,31 @@
+import { useCallback, useState } from 'react';
 import { Text, View } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import MapView, { Marker } from 'react-native-maps';
 import FindingBox from './FindingBox';
+import { events } from '../../helpers';
 import Header from '../_components/Header';
+import ModalChatRequest from '../_components/_modals/ChatRequest';
+import { setFriend } from '../../redux/features/chat';
 
 function Maps(props) {
   const { navigation } = props;
+  const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const formSearch = useSelector((state) => state.formSearch);
   const myLocations = user.data.locations;
   const myFriends = formSearch.friends;
 
+  const onLayoutView = useCallback(() => {
+    events.on('modal:chat-request', (friend) => {
+      dispatch(setFriend(friend));
+      setShowModal(true);
+    });
+  }, []);
+
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-white" onLayout={onLayoutView}>
 
       <Header title="Mencari Teman" backTo="Home" navigation={navigation} />
 
@@ -53,6 +66,8 @@ function Maps(props) {
       </MapView>
 
       <FindingBox navigation={navigation} />
+
+      <ModalChatRequest showed={showModal} setter={setShowModal} />
 
     </View>
   );
