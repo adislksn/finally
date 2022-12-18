@@ -16,6 +16,13 @@ events.on('user-updated', (user) => {
   socket.disconnect();
   socket.io.opts.auth.userId = user._id;
   socket.connect();
+
+  // Get chat request.
+  socket.on(`chat-request:${user._id}`, (data) => {
+    const friend = { ...data.user };
+    friend.message = data.message;
+    events.emit('socket:chat-request', friend);
+  });
 });
 
 export default socket;

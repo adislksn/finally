@@ -18,6 +18,8 @@ axios.defaults.baseURL = BASE_URL || 'http://localhost:8000';
 SplashScreen.preventAutoHideAsync();
 
 function App() {
+  // State.
+
   // Load fonts.
   const [fontsLoaded] = useFonts({
     'Urbanist-Medium': require('./src/assets/fonts/Urbanist/Urbanist-Medium.ttf'),

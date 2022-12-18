@@ -4,6 +4,9 @@ const initialState = {
   friend: {
     _id: null,
     name: '-',
+    picture: null,
+    description: '',
+    message: '',
   },
   sendRequest: {
     form: {

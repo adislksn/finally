@@ -20,6 +20,6 @@ events.on('app-ready', async () => {
   // Running update position.
   events.on('user-updated', () => {
     updatePositions();
-    setInterval(() => updatePositions(), 3000);
+    setInterval(() => updatePositions(), 15000);
   });
 });

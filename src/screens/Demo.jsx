@@ -3,11 +3,11 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 
-// import ReciveModal from './_components/_modals/ReciveModal';
+// import ModalChatRequest from './_components/_modals/ChatRequest';
+import ModalApprovalRequest from './_components/_modals/ApprovalRequest';
 // import SendModal from './_components/_modals/SendModal';
 // import LoadModal from './_components/_modals/LoadModal';
 // import DeniedModal from './_components/_modals/DeniedModal';
-import ModalChatRequest from './_components/_modals/ChatRequest';
 
 export default function Demo(props) {
   const { navigation } = props;
@@ -27,7 +27,8 @@ export default function Demo(props) {
     <View className="flex-1 justify-center items-center">
       <StatusBar />
 
-      <ModalChatRequest showed={showModal} setter={setShowModal} />
+      {/* <ModalChatRequest showed={showModal} setter={setShowModal} /> */}
+      <ModalApprovalRequest showed={showModal} setter={setShowModal} />
 
       {/* <Modal
         animationType="slide"
