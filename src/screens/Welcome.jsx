@@ -6,6 +6,7 @@ import {
   StyleSheet, Text, View, Image, StatusBar,
 } from 'react-native';
 import Btn from './_components/Btn';
+import { events } from '../helpers';
 import { setToken, setData, resetState } from '../redux/features/user';
 
 function Welcome(props) {
@@ -20,8 +21,9 @@ function Welcome(props) {
 
     // Get my session info.
     const url = '/api/me';
-    axios.get(url).then(({ data }) => {
+    await axios.get(url).then(({ data }) => {
       dispatch(setData(data.data));
+      events.emit('user-updated', data.data);
     }).catch(() => {
       dispatch(resetState());
     });
