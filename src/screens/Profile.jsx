@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import {
-  Image, StyleSheet, View, TouchableOpacity, TextInput, ScrollView,
+  Image, StyleSheet, View, TouchableOpacity, TextInput, ScrollView, Text,
 } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   FontAwesome, Fontisto, MaterialCommunityIcons,
 } from '@expo/vector-icons';
+import delay from 'delay';
+import axios from 'axios';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SelectList } from 'react-native-dropdown-select-list';
 import Btn from './_components/Btn';
 import Header from './_components/Header';
+import {
+  setData, setMessage, resetState, setBio,
+} from '../redux/features/user';
 
 const genders = [
   { key: 'man', value: 'Laki Laki' },
@@ -15,8 +22,18 @@ const genders = [
   { key: 'anonym', value: 'Anonymous' },
 ];
 
+function MessageView(props) {
+  const { message } = props;
+  const { error, success } = message;
+  if (error) return <Text className="text-rose-700">{ error }</Text>;
+  if (success) return <Text className="text-emerald-600">{ success }</Text>;
+  return null;
+}
+
 function Profile(props) {
   const { navigation } = props;
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const [gender, setGender] = useState('anonym');
 
   // Handle press events.
@@ -25,11 +42,26 @@ function Profile(props) {
       navigation.navigate('Home');
     },
 
-    editPicture() {
+    async editPicture() {
+      const url = '/api/auth/login';
+      const body = user.data;
       console.log('edit profile');
     },
 
-    save() {
+    async save() {
+      const url = '/api/auth/login';
+      const body = user.data;
+      dispatch(setMessage({}));
+      await axios.post(url, body).then(({ data }) => {
+        dispatch(setMessage({ success: data.msg }));
+        (async () => {
+          await delay(600);
+          navigation.navigate('Profile');
+          dispatch(resetState());
+        })();
+      }).catch(({ response }) => {
+        dispatch(setMessage({ error: response.data.msg }));
+      });
       console.log('disimpan');
     },
   };
@@ -57,27 +89,37 @@ function Profile(props) {
 
             <View className="flex-row rounded-md p-3 w-full items-center mb-5 bg-gray-100">
               <FontAwesome name="user" size={24} style={style.inputIcon} />
-              <TextInput className="w-10/12 pl-4 placeholder:text-s placeholder:text-black" placeholder="Nama" />
+              <TextInput
+                className="w-10/12 pl-4 placeholder:text-s placeholder:text-black"
+                onChangeText={(value) => dispatch(setBio({ key: 'name', value }))}
+                placeholder="Nama"
+                value={user.data.name}
+              />
             </View>
 
             <View className="flex-row relative z-10 rounded-md p-3 w-full items-center mb-5 bg-gray-100">
               <Fontisto name="transgender" size={24} style={style.inputIcon} />
               <SelectList
-                data={genders}
+                data={user.data.gender}
                 setSelected={(val) => setGender(val)}
                 save="key"
                 search={false}
                 boxStyles={style.selectBox}
                 dropdownStyles={style.selectDropdown}
                 dropdownItemStyles={style.selectItem}
-                defaultOption={genders.find((item) => item.key === 'anonym')}
-                onSelect={() => console.log(gender)}
+                defaultOption={user.data.gender}
+                onSelect={() => dispatch(setBio({ key: 'gender', gender }))}
               />
             </View>
 
             <View className="flex-row rounded-md p-3 w-full items-center bg-gray-100">
               <MaterialCommunityIcons name="playlist-edit" size={24} style={style.inputIcon} />
-              <TextInput className="w-10/12 pl-1 placeholder:text-s placeholder:text-black" placeholder="Bio" />
+              <TextInput
+                className="w-10/12 pl-1 placeholder:text-s placeholder:text-black"
+                placeholder="Bio"
+                onChangeText={((value) => dispatch(setBio({ key: 'description', value })))}
+                value={user.data.description}
+              />
             </View>
 
             <Btn text="Simpan" click={press.save} />
