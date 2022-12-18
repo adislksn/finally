@@ -1,34 +1,13 @@
-import {
-  View, Text, StatusBar, TouchableOpacity, Modal, Image,
-} from 'react-native';
-import React, { useState } from 'react';
+import { 
+  View, Text, StatusBar, TouchableOpacity, Image,
+ } from 'react-native';
+import React from 'react';
 
 import Btn from './_components/Btn';
 
-export default function Demo(props) {
-  const { navigation } = props;
-
-  const [showModal, setShowModal] = useState(false);
-
-  const press = {
-    toggleModal() {
-      setShowModal(!showModal);
-    },
-
-    goToChatbox() {
-      navigation.navigate('ChatRoom');
-    },
-  };
-
+export default function ReciveModal() {
   return (
-    <View className="flex-1 justify-center items-center">
-      <StatusBar />
-      <Modal
-        animationType="slide"
-        transparent
-        visible={showModal}
-      >
-        <View className="flex-1 justify-center items-center" style={{ backgroundColor: 'rgba(52, 52, 52, 0.7)' }}>
+    <View className="flex-1 justify-center items-center" style={{ backgroundColor: 'rgba(52, 52, 52, 0.7)' }}>
           <View className="bg-white w-11/12 rounded-2xl  justify-center p-5">
             <View className="flex flex-col justify-center items-center m-3">
               <Image className="w-20 h-20 rounded-full" source={require('../assets/image1.png')} />
@@ -58,13 +37,5 @@ export default function Demo(props) {
             </View>
           </View>
         </View>
-      </Modal>
-      <TouchableOpacity className="bg-slate-500" onPress={() => { press.toggleModal(); }}>
-        <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold' }}>
-          Hello world
-        </Text>
-      </TouchableOpacity>
-
-    </View>
   );
 }

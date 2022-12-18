@@ -36,9 +36,21 @@ export const user = createSlice({
       state.data = data;
     },
 
+    setBio: (state, action) => {
+      const { key, value } = action.payload;
+      state.data[key] = value;
+    },
+
     // API Control.
+    setMessage: (state, action) => {
+      const { error, success } = action.payload;
+      state.message.error = error;
+      state.message.success = success;
+    },
   },
 });
 
-export const { setToken, setData, resetState } = user.actions;
+export const {
+  setToken, setData, resetState, setBio, setMessage,
+} = user.actions;
 export default user.reducer;
