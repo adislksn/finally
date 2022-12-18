@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import MapView, { Marker } from 'react-native-maps';
 import FindingBox from './FindingBox';
@@ -47,8 +47,8 @@ function Maps(props) {
           title={user.data.name}
           description={user.data.description || '-'}
         >
-          <View style={{ backgroundColor: 'white', padding: 10 }}>
-            <Text>ME</Text>
+          <View>
+            <Image source={require('../../assets/myPinMarker.png')} />
           </View>
         </Marker>
 
