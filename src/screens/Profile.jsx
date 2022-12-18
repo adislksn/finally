@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { SelectList } from 'react-native-dropdown-select-list';
@@ -7,6 +8,7 @@ import {
 import {
   Image, StyleSheet, View, TouchableOpacity, TextInput, ScrollView,
 } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 import Btn from './_components/Btn';
 import Header from './_components/Header';
 import { setBio, setBioBtn } from '../redux/features/user';
@@ -21,6 +23,9 @@ function Profile(props) {
   const { navigation } = props;
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const placeholderImage = require('../assets/default-pic.jpg');
+  const [selectedImage, setSelectedImage] = useState(user.data.picture);
+  const imageSource = selectedImage !== null ? { uri: selectedImage } : placeholderImage;
 
   // Handle press events.
   const press = {
@@ -28,11 +33,22 @@ function Profile(props) {
       navigation.navigate('Home');
     },
 
-    // async editPicture() {
-    //   const url = '/api/auth/login';
-    //   const body = user.data;
-    //   console.log('edit profile');
-    // },
+    async editPicture() {
+      // const url = '/api/me/picture';
+      // const body = user.data;
+      const result = await ImagePicker.launchImageLibraryAsync({
+        allowsEditing: true,
+        quality: 1,
+      });
+      const value = result.assets[0].uri;
+      if (!result.canceled) {
+        console.log(value);
+        setSelectedImage(value);
+        dispatch(setBio({ key: 'picture', value }));
+      } else {
+        alert('You did not select any image.');
+      }
+    },
 
     async saveBio() {
       const url = '/api/me/bio';
@@ -55,7 +71,7 @@ function Profile(props) {
           <View className="items-center">
             <View className="my-6">
               <View className="rounded-full border-orange-400" style={{ borderWidth: 6 }}>
-                <Image className="w-36 h-36 rounded-full" source={require('../assets/image2.png')} />
+                <Image className="w-36 h-36 rounded-full" source={imageSource} />
               </View>
               <TouchableOpacity activeOpacity={0.8} className="bg-orange-500 absolute bottom-0 right-0 p-4 rounded-full" onPress={press.editPicture}>
                 <FontAwesome name="camera" size={20} color="white" />
@@ -70,7 +86,7 @@ function Profile(props) {
               <TextInput
                 className="w-10/12 pl-4 placeholder:text-s placeholder:text-black"
                 onChangeText={(value) => dispatch(setBio({ key: 'name', value }))}
-                placeholder="Nama"
+                placeholder={user.data.name}
                 value={user.data.name}
               />
             </View>
@@ -93,7 +109,7 @@ function Profile(props) {
               <MaterialCommunityIcons name="playlist-edit" size={24} style={style.inputIcon} />
               <TextInput
                 className="w-10/12 pl-1 placeholder:text-s placeholder:text-black"
-                placeholder="Bio"
+                placeholder={user.data.descriptions}
                 onChangeText={((value) => dispatch(setBio({ key: 'description', value })))}
                 value={user.data.description}
               />
