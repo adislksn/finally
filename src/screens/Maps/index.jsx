@@ -1,33 +1,15 @@
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import MapView, { Marker } from 'react-native-maps';
 import FindingBox from './FindingBox';
 import Header from '../_components/Header';
 
 function Maps(props) {
   const { navigation } = props;
-  const markerLocation = [
-    {
-      id: 0,
-      latitude: 37.70825,
-      longitude: -122.4324,
-      tittle: 'nama',
-      description: 'bio',
-    },
-    {
-      id: 1,
-      latitude: 37.7655,
-      longitude: -122.4324,
-      tittle: 'nama',
-      description: 'bio',
-    },
-    {
-      id: 2,
-      latitude: 37.78888,
-      longitude: -122.4324,
-      tittle: 'nama',
-      description: 'bio',
-    },
-  ];
+  const user = useSelector((state) => state.user);
+  const formSearch = useSelector((state) => state.formSearch);
+  const myLocations = user.data.locations;
+  const myFriends = formSearch.friends;
 
   return (
     <View className="flex-1 bg-white">
@@ -37,21 +19,35 @@ function Maps(props) {
       <MapView
         className="flex-1"
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: myLocations.latitude,
+          longitude: myLocations.longitude,
           latitudeDelta: 0.0822,
           longitudeDelta: 0.0421,
         }}
       >
-        {markerLocation.map((location) => (
+        <Marker
+          key={user.data._id}
+          coordinate={{
+            latitude: myLocations.latitude,
+            longitude: myLocations.longitude,
+          }}
+          title={user.data.name}
+          description={user.data.description || '-'}
+        >
+          <View style={{ backgroundColor: 'white', padding: 10 }}>
+            <Text>ME</Text>
+          </View>
+        </Marker>
+
+        {myFriends.map((friend) => (
           <Marker
-            key={location.id}
+            key={friend._id}
             coordinate={{
-              latitude: location.latitude,
-              longitude: location.longitude,
+              latitude: friend.locations.latitude,
+              longitude: friend.locations.longitude,
             }}
-            title={location.title}
-            description={location.description}
+            title={friend.name}
+            description={friend.description}
           />
         ))}
       </MapView>
