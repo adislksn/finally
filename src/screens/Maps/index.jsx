@@ -47,8 +47,8 @@ function Maps(props) {
           title={user.data.name}
           description={user.data.description || '-'}
         >
-          <View>
-            <Image source={require('../../assets/myPinMarker.png')} />
+          <View className="">
+            <Image className="w-7 h-11 object-contain" source={require('../../assets/selfPinMarker.png')} />
           </View>
         </Marker>
 
