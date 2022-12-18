@@ -6,7 +6,7 @@ const initialState = {
     password: '',
   },
   btn: {
-    disabled: true,
+    disabled: false,
     value: 'Login',
   },
   message: {

@@ -15,6 +15,12 @@ const initialState = {
     },
     isOnline: false,
   },
+  formBio: {
+    btn: {
+      disabled: false,
+      value: 'Simpan',
+    },
+  },
 };
 
 export const user = createSlice({
@@ -41,7 +47,12 @@ export const user = createSlice({
       state.data[key] = value;
     },
 
-    // API Control.
+    setBioBtn: (state, { payload }) => {
+      const { disabled, value } = payload;
+      state.formBio.btn.disabled = disabled;
+      state.formBio.btn.value = value;
+    },
+
     setMessage: (state, action) => {
       const { error, success } = action.payload;
       state.message.error = error;
@@ -51,6 +62,6 @@ export const user = createSlice({
 });
 
 export const {
-  setToken, setData, resetState, setBio, setMessage,
+  setToken, setData, resetState, setBio, setMessage, setBioBtn,
 } = user.actions;
 export default user.reducer;
