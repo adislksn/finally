@@ -13,10 +13,9 @@ import store from './src/redux/store';
 import { events } from './src/helpers';
 import Navigator from './src/Navigator';
 
-SplashScreen.preventAutoHideAsync();
-
 // Set axios configs.
 axios.defaults.baseURL = BASE_URL || 'http://localhost:8000';
+SplashScreen.preventAutoHideAsync();
 
 function App() {
   // Load fonts.

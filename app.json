@@ -6,7 +6,6 @@
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
-    "jsEngine": "hermes",
     "splash": {
       "image": "./src/assets/splash.png",
       "resizeMode": "contain",
@@ -26,7 +25,7 @@
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.neszha.finally"
+      "package": "com.neszha.finallyapplication"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"

@@ -26,6 +26,7 @@
     "expo-splash-screen": "^0.17.5",
     "expo-status-bar": "~1.4.2",
     "nativewind": "^2.0.11",
+    "postcss": "8.0.9",
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-dropdown-select-list": "^2.0.2",

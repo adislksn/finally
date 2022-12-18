@@ -1,16 +1,12 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import axios from 'axios';
-import { INITIAL_SCREEN, BASE_URL } from '@env';
+import { INITIAL_SCREEN } from '@env';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   Maps, Home, Login, Welcome, Profile, Register, ChatRoom,
 } from './screens';
 import Demo from './screens/Demo';
-
-// Set axios configs.
-axios.defaults.baseURL = BASE_URL || 'http://localhost:8000';
 
 function Routes() {
   const initialScreenName = INITIAL_SCREEN || 'Welcome';
