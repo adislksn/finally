@@ -17,6 +17,10 @@ const initialState = {
       value: 'Kirim',
     },
   },
+  chat: {
+    users: {},
+    contents: [],
+  },
 };
 
 export const chat = createSlice({
