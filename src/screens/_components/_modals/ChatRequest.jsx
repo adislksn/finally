@@ -8,6 +8,7 @@ import floor from 'floor';
 import axios from 'axios';
 import { setSendRequestMessage, setSendRequestBtn } from '../../../redux/features/chat';
 import Btn from '../Btn';
+import { events } from '../../../helpers';
 
 const stringLimiter = (string, limit = 4) => {
   if (!string) return null;
@@ -30,8 +31,8 @@ export default function ModalChatRequest(props) {
       const body = chat.sendRequest.form;
       dispatch(setSendRequestBtn({ disabled: true, value: 'Meminta...' }));
       await axios.post(url, body).then(({ data }) => {
-        console.log(data);
         setter(false);
+        events.emit('modal:open-waiting-approved', data);
       }).catch(() => {});
       dispatch(setSendRequestBtn({ disabled: false, value: 'Kirim' }));
     },

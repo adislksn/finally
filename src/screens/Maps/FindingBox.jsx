@@ -12,7 +12,7 @@ function FindedUserItems(props) {
 
   const press = {
     openModalChatRequest(friend) {
-      events.emit('modal:chat-request', friend);
+      events.emit('modal:open-chat-request', friend);
     },
   };
 

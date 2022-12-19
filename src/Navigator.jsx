@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { useCallback, useState } from 'react';
 import { INITIAL_SCREEN } from '@env';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View } from 'react-native';
@@ -16,7 +16,6 @@ import { setFriend } from './redux/features/chat';
 function Routes() {
   const [modalApproval, setModalApproval] = useState(false);
   const dispatch = useDispatch();
-  // const chat = useSelector((state) => state.chat);
 
   const initialScreenName = INITIAL_SCREEN || 'Welcome';
   const Stack = createNativeStackNavigator();

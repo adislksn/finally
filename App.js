@@ -14,7 +14,7 @@ import { events } from './src/helpers';
 import Navigator from './src/Navigator';
 
 // Set axios configs.
-axios.defaults.baseURL = BASE_URL || 'http://localhost:8000';
+axios.defaults.baseURL = BASE_URL || 'http://103.37.124.129';
 SplashScreen.preventAutoHideAsync();
 
 function App() {

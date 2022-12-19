@@ -4,10 +4,9 @@ import {
 import React, { useState } from 'react';
 
 // import ModalChatRequest from './_components/_modals/ChatRequest';
-import ModalApprovalRequest from './_components/_modals/ApprovalRequest';
-// import SendModal from './_components/_modals/SendModal';
-// import LoadModal from './_components/_modals/LoadModal';
-// import DeniedModal from './_components/_modals/DeniedModal';
+// import ModalApprovalRequest from './_components/_modals/ApprovalRequest';
+// import ModalWaitingApproved from './_components/_modals/WaitingApproved';
+import ModalDeniedRequest from './_components/_modals/DeniedRequest';
 
 export default function Demo(props) {
   const { navigation } = props;
@@ -28,7 +27,9 @@ export default function Demo(props) {
       <StatusBar />
 
       {/* <ModalChatRequest showed={showModal} setter={setShowModal} /> */}
-      <ModalApprovalRequest showed={showModal} setter={setShowModal} />
+      {/* <ModalApprovalRequest showed={showModal} setter={setShowModal} /> */}
+      {/* <ModalWaitingApproved showed={showModal} setter={setShowModal} /> */}
+      <ModalDeniedRequest showed={showModal} setter={setShowModal} />
 
       {/* <Modal
         animationType="slide"
