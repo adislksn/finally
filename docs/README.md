@@ -27,32 +27,3 @@ Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan ap
 4. Memulai percakapan dengan pengguna di sekitar dengan mengklik panah orange
 5. Melakukan percakapan dengan pengguna lain
 6. Mengakhiri percakapan dengan pengguna lain dengan cara klik akhiri percakapan
-
-## Repo Structure
-This thing maybe help you to know what the different between folder.
-
-```
-/
-├─ OwlCarousel2-2,3.4/dist/
-├─ assets/           # Assets (SVG and PNG)
-│  ├─ assets/        # Random Images
-|  |  └─ logo        # ITERA Logo
-│  ├─ media/         # Used in 'beranda.html' for modal 
-│  └─ our-team/      # PNG Images for 'out-team.html'
-│  
-├─ css/              # All of css file
-|
-├─ html/             # All of html file
-│
-├─ js/               # All of js file
-│
-├─ node_modules      # Modules of npm
-|
-├─ php               # Setup for blade file
-├─ .gitignore        # List of files and folders not tracked by Git
-├─ README.md         # This file
-├─ manifest.json     # Saving dependencies
-├─ package-lock.json # json file from NPM (locked)
-├─ package.json      # json file from NPM
-└─ staff.txt         # junk files
-```
