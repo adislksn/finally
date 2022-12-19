@@ -16,7 +16,7 @@ Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berda
 
 <br>
 
-## How to use the app
+## Cara menggunakan aplikasi
 Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan aplikasi :
 
 1. Membuat akun, jika sudah memiiki akun dapat langsung login
