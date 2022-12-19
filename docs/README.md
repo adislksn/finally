@@ -3,14 +3,14 @@
 
 ## Description 
 Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berdasarkan lokasi terdekat. Aplikasi ini menawarkan fitur utama yang dinatranya:
-1. Pencarian teman berdasarkan lokasi anda berada.
-2. Fitur chating.
+- Pencarian teman berdasarkan lokasi anda berada.
+- Fitur chating.
 
 Dengan menggunakan aplikasi ini anda dapat menemukan dan ngobrol dengan teman yang ada di sekitar anda.
 
 Fitur aplikasi ini adalah :
-1. Login dan Register
-2. Menentukan jarak  
+- Login dan Register
+- Menentukan jarak lokasi
 3. Melakukan chatting
 4. Mengedit profile
 
