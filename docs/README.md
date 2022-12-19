@@ -12,6 +12,7 @@ Fitur aplikasi ini adalah :
 - Login dan Register
 - Menentukan jarak lokasi
 - Menampilkan pengguna disekitar
+- Menampilkan notifikasi jika ada pengguna yang ingin memulai chatting
 - Melakukan chatting
 - Mengedit profile
 
@@ -23,8 +24,8 @@ Fitur aplikasi ini adalah :
 Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan aplikasi :
 
 1. Membuat akun, jika sudah memiiki akun dapat langsung login
-2. Mengedit profile denganmengklik bar menu
-3. Menentukan jarak radius yang diinginkan dengan menggerser slider pada tampilan home
+2. Mengedit profile dengan mengklik bar menu
+3. Menentukan jarak radius yang diinginkan dengan menggeser slider radius pada tampilan home
 4. Memulai percakapan dengan pengguna di sekitar dengan mengklik panah orange
 5. Melakukan percakapan dengan pengguna lain
 6. Mengakhiri percakapan dengan pengguna lain dengan cara klik akhiri percakapan
