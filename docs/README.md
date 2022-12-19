@@ -11,8 +11,9 @@ Dengan menggunakan aplikasi ini anda dapat menemukan dan ngobrol dengan teman ya
 Fitur aplikasi ini adalah :
 - Login dan Register
 - Menentukan jarak lokasi
-3. Melakukan chatting
-4. Mengedit profile
+- Menampilkan pengguna disekitar
+- Melakukan chatting
+- Mengedit profile
 
 ## Developer Team
 |  [<img src="https://avatars.githubusercontent.com/u/98870264?s=64&v=4" width="100px;"/><br /><sub><b>Adi Sulaksono</b></sub>](https://github.com/adislksn)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=adislksn "Code") [🔧](https://github.com/adislksn/adislksn-theme) | [<img src="https://avatars.githubusercontent.com/u/74146018?s=64&v=4" width="100px;"/><br /><sub><b>Muhammad Qomarudin</b></sub>](https://github.com/masQ-21dev)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=masQ-21dev "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/masQ-21dev-theme) |  [<img src="https://avatars.githubusercontent.com/u/63780649?v=4" width="100px;"/><br /><sub><b>Fanesa Hadi Permana</b></sub>](https://github.com/neszha)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=neszha "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/neszha-theme) | [<img src="https://avatars.githubusercontent.com/u/103428648?s=400&u=951975b16b746a8db5975b3f54a15b28ef8cd467&v=4" width="100px;"/><br /><sub><b>Adli Mustofa</b></sub>](https://github.com/AdliMustofa120140022)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=AdliMustofa120140022 "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/AdliMustofa120140022-theme) | [<img src="https://avatars.githubusercontent.com/u/104608536?v=4" width="100px;"/><br /><sub><b>Devi Kurnia</b></sub>](https://github.com/devikrn)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=devikrn "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/devikrn-theme) |
