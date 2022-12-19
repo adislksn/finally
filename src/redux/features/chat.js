@@ -18,6 +18,7 @@ const initialState = {
     },
   },
   chat: {
+    _id: null,
     users: {},
     contents: [],
   },
