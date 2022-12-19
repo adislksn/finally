@@ -2,21 +2,21 @@
 # APLIKASI FINALLY BY : GOLEX DEVELOPMENT
 
 ## Deskripsi 
-Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berdasarkan lokasi terdekat. Aplikasi ini menawarkan fitur utama yang dinatranya:
-1. Pencarian teman berdasarkan lokasi anda berada.
-2. Fitur chating.
+Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berdasarkan lokasi terdekat. Dengan menggunakan aplikasi ini anda dapat menemukan dan ngobrol dengan teman yang ada di sekitar anda.
 
-Dengan menggunakan aplikasi ini anda dapat menemukan dan ngobrol dengan teman yang ada di sekitar anda.
+### Fitur Utama Aplikasi :
+- Pencarian teman berdasarkan lokasi anda berada.
+- Fitur chating.
 
-Fitur aplikasi ini adalah :
-1. Login dan Register
-2. Menentukan jarak  
-3. Melakukan chatting
-4. Mengedit profile
+### Fitur aplikasi ini adalah :
+- Login dan Register
+- Menentukan jarak  
+- Melakukan chatting
+- Mengedit profile
 
-## Developer Team
-|  [<img src="https://avatars.githubusercontent.com/u/98870264?s=64&v=4" width="100px;"/><br /><sub><b>Adi Sulaksono</b></sub>](https://github.com/adislksn)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=adislksn "Code") [🔧](https://github.com/adislksn/adislksn-theme) | [<img src="https://avatars.githubusercontent.com/u/74146018?s=64&v=4" width="100px;"/><br /><sub><b>Muhammad Qomarudin</b></sub>](https://github.com/masQ-21dev)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=masQ-21dev "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/masQ-21dev-theme) |  [<img src="https://avatars.githubusercontent.com/u/63780649?v=4" width="100px;"/><br /><sub><b>Fanesa Hadi Permana</b></sub>](https://github.com/neszha)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=neszha "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/neszha-theme) | [<img src="https://avatars.githubusercontent.com/u/103428648?s=400&u=951975b16b746a8db5975b3f54a15b28ef8cd467&v=4" width="100px;"/><br /><sub><b>Adli Mustofa</b></sub>](https://github.com/AdliMustofa120140022)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=AdliMustofa120140022 "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/AdliMustofa120140022-theme) | [<img src="https://avatars.githubusercontent.com/u/104608536?v=4" width="100px;"/><br /><sub><b>Devi Kurnia</b></sub>](https://github.com/devikrn)<br />[💻](https://github.com/adislksn/FE-PPLK-2022/commits?author=devikrn "Code") [🔧](https://github.com/adislksn/FE-PPLK-2022/devikrn-theme) |
-|--|--|--|--|--|
+<hr>
+
+<br>
 
 ## How to use the app
 Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan aplikasi :
@@ -28,31 +28,43 @@ Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan ap
 5. Melakukan percakapan dengan pengguna lain
 6. Mengakhiri percakapan dengan pengguna lain dengan cara klik akhiri percakapan
 
+<hr>
+
+<br>
+
+## Member of Golex Developer
+|  [<img src="https://avatars.githubusercontent.com/u/98870264?s=64&v=4" width="100px;"/><br /><sub><b>Adi Sulaksono</b><br/>(120140038)</sub>](https://github.com/adislksn)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=adislksn "Code") | [<img src="https://avatars.githubusercontent.com/u/74146018?s=64&v=4" width="100px;"/><br /><sub><b>Muhammad Qomarudin</b><br/>(120140116)</sub>](https://github.com/masQ-21dev)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=masQ-21dev "Code") |  [<img src="https://avatars.githubusercontent.com/u/63780649?v=4" width="100px;"/><br /><sub><b>Fanesa Hadi Permana</b><br/>(120140189)</sub>](https://github.com/neszha)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=neszha "Code") | [<img src="https://avatars.githubusercontent.com/u/103428648?s=400&u=951975b16b746a8db5975b3f54a15b28ef8cd467&v=4" width="100px;"/><br /><sub><b>Adli Mustofa</b><br/>(120140022)</sub>](https://github.com/AdliMustofa120140022)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=AdliMustofa120140022 "Code") | [<img src="https://avatars.githubusercontent.com/u/104608536?v=4" width="100px;"/><br /><sub><b>Devi Kurnia</b><br/>(120140060)</sub>](https://github.com/devikrn)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=devikrn "Code") |
+|--|--|--|--|--|
+
+<br>
+
 ## Repo Structure
 This thing maybe help you to know what the different between folder.
 
 ```
 /
-├─ OwlCarousel2-2,3.4/dist/
-├─ assets/           # Assets (SVG and PNG)
-│  ├─ assets/        # Random Images
-|  |  └─ logo        # ITERA Logo
-│  ├─ media/         # Used in 'beranda.html' for modal 
-│  └─ our-team/      # PNG Images for 'out-team.html'
+├─ /docs             
+├─ src/              
+│  ├─ assets/        # Image and font 
+│  ├─ helpers/       # helpers 
+│  └─ redux/         # Redux
+|  |  └─ features   
+│  └─ runtime/       # Run Time 
+│  └─ screen/        # All the XML code
+|  |  ├─ _components # All Components
+|  |  | └─ _modals   # Modal Components
+|  |  ├─ ChatRoom    # Chat room Screen
+|  |  └─ Maps        # Maps Screen
+│  └─ Navigator.jsx  # The navigaror
+│  └─ soket.jsx      # Socet for API chat
 │  
-├─ css/              # All of css file
-|
-├─ html/             # All of html file
-│
-├─ js/               # All of js file
-│
-├─ node_modules      # Modules of npm
-|
-├─ php               # Setup for blade file
-├─ .gitignore        # List of files and folders not tracked by Git
-├─ README.md         # This file
-├─ manifest.json     # Saving dependencies
-├─ package-lock.json # json file from NPM (locked)
-├─ package.json      # json file from NPM
-└─ staff.txt         # junk files
+├─ .env
+├─ .eslintrc.js
+├─ .gitignore
+├─ App.js
+├─ app.json
+├─ babel.config.js
+├─ eas.json
+├─ package.json
+└─ tailwind.config.js         
 ```
