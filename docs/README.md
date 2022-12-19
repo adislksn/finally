@@ -14,8 +14,6 @@ Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berda
 - Melakukan chatting
 - Mengedit profile
 
-<hr>
-
 <br>
 
 ## How to use the app
@@ -29,15 +27,11 @@ Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan ap
 6. Melakukan percakapan dengan pengguna lain
 7. Mengakhiri percakapan dengan pengguna lain dengan cara klik akhiri percakapan
 
-<hr>
-
 <br>
 
 ## Member of Golex Developer
 |  [<img src="https://avatars.githubusercontent.com/u/98870264?s=64&v=4" width="100px;"/><br /><sub><b>Adi Sulaksono</b><br/>(120140038)</sub>](https://github.com/adislksn)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=adislksn "Code") | [<img src="https://avatars.githubusercontent.com/u/74146018?s=64&v=4" width="100px;"/><br /><sub><b>Muhammad Qomarudin</b><br/>(120140116)</sub>](https://github.com/masQ-21dev)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=masQ-21dev "Code") |  [<img src="https://avatars.githubusercontent.com/u/63780649?v=4" width="100px;"/><br /><sub><b>Fanesa Hadi Permana</b><br/>(120140189)</sub>](https://github.com/neszha)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=neszha "Code") | [<img src="https://avatars.githubusercontent.com/u/103428648?s=400&u=951975b16b746a8db5975b3f54a15b28ef8cd467&v=4" width="100px;"/><br /><sub><b>Adli Mustofa</b><br/>(120140022)</sub>](https://github.com/AdliMustofa120140022)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=AdliMustofa120140022 "Code") | [<img src="https://avatars.githubusercontent.com/u/104608536?v=4" width="100px;"/><br /><sub><b>Devi Kurnia</b><br/>(120140060)</sub>](https://github.com/devikrn)<br />[💻](https://github.com/masQ-21dev/finally/commits?author=devikrn "Code") |
 |--|--|--|--|--|
-
-<hr>
 
 <br>
 
