@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import * as FileSystem from 'expo-file-system';
 import { SelectList } from 'react-native-dropdown-select-list';
 import {
   FontAwesome, Fontisto, MaterialCommunityIcons,
@@ -9,6 +10,7 @@ import {
   Image, StyleSheet, View, TouchableOpacity, TextInput, ScrollView,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import FormData from 'form-data';
 import Btn from './_components/Btn';
 import Header from './_components/Header';
 import { setBio, setBioBtn } from '../redux/features/user';
@@ -34,20 +36,21 @@ function Profile(props) {
     },
 
     async editPicture() {
-      // const url = '/api/me/picture';
-      // const body = user.data;
       const result = await ImagePicker.launchImageLibraryAsync({
-        allowsEditing: true,
-        quality: 1,
+        allowsEditing: true, quality: 1,
       });
-      const value = result.assets[0].uri;
-      if (!result.canceled) {
-        console.log(value);
-        setSelectedImage(value);
-        dispatch(setBio({ key: 'picture', value }));
-      } else {
-        alert('You did not select any image.');
-      }
+      const { uri } = result.assets[0];
+      const fileContents = await FileSystem.readAsStringAsync(uri);
+      const url = '/api/me/picture';
+      const formData = new FormData();
+      formData.append('picture', fileContents);
+      await axios.post(url, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }).catch(() => {});
+      setSelectedImage(uri);
+      dispatch(setBio({ key: 'picture', uri }));
     },
 
     async saveBio() {
