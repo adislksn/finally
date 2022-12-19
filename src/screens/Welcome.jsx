@@ -1,33 +1,12 @@
-import axios from 'axios';
-import { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useSelector } from 'react-redux';
 import {
   StyleSheet, Text, View, Image, StatusBar,
 } from 'react-native';
 import Btn from './_components/Btn';
-import { events } from '../helpers';
-import { setToken, setData, resetState } from '../redux/features/user';
 
 function Welcome(props) {
   const { navigation } = props;
-  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-
-  const onLayoutView = useCallback(async () => {
-    // Load token from storage.
-    const token = await AsyncStorage.getItem('token');
-    dispatch(setToken(token));
-
-    // Get my session info.
-    const url = '/api/me';
-    await axios.get(url).then(({ data }) => {
-      dispatch(setData(data.data));
-      events.emit('user-updated', data.data);
-    }).catch(() => {
-      dispatch(resetState());
-    });
-  }, []);
 
   // Handle press events.
   const press = {
@@ -38,7 +17,7 @@ function Welcome(props) {
   };
 
   return (
-    <View className="bg-slate-100 mx-10 flex-1 justify-center items-center" onLayout={onLayoutView}>
+    <View className="bg-slate-100 mx-10 flex-1 justify-center items-center">
       <StatusBar style="light" />
       <Image className="w-44 h-44 mt-32" source={require('../assets/finally.png')} />
       <Text className="text-4xl pt-5" style={style.textLogo}>
