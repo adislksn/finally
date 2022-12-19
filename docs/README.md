@@ -2,11 +2,11 @@
 # APLIKASI FINALLY BY : GOLEX DEVELOPMENT
 
 ## Deskripsi 
-Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berdasarkan lokasi terdekat. Dengan menggunakan aplikasi ini anda dapat menemukan dan ngobrol dengan teman yang ada di sekitar anda.
+Aplikasi finally merupakan aplikasi *chatting* yang berbasis pencarian teman berdasarkan lokasi terdekat. Dengan menggunakan aplikasi ini anda dapat menemukan dan ngobrol dengan teman yang ada di sekitar anda.
 
 ### Fitur Utama Aplikasi :
 - Pencarian teman berdasarkan lokasi anda berada.
-- Fitur chating.
+- Fitur *chatting*.
 
 ### Fitur Aplikasi Ini Adalah :
 - Login dan Register
