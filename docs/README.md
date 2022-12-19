@@ -10,7 +10,7 @@ Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berda
 
 ### Fitur aplikasi ini adalah :
 - Login dan Register
-- Menentukan jarak  
+- Menentukan jarak 
 - Melakukan chatting
 - Mengedit profile
 
