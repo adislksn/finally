@@ -8,7 +8,7 @@ Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berda
 - Pencarian teman berdasarkan lokasi anda berada.
 - Fitur chating.
 
-### Fitur aplikasi ini adalah :
+### Fitur Aplikasi Ini Adalah :
 - Login dan Register
 - Menentukan jarak 
 - Melakukan chatting
@@ -16,7 +16,7 @@ Aplikasi finally merupakan aplikasi chatting yang berbasis pencarian teman berda
 
 <br>
 
-## Cara menggunakan aplikasi
+## Cara Menggunakan Aplikasi
 Untuk dapat menikmati fitur yang ada di aplikasi ini berikut cara menggunakan aplikasi :
 
 1. Membuat akun, jika sudah memiiki akun dapat langsung login
